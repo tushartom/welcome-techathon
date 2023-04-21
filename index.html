@@ -9,17 +9,19 @@
   </head>
   <body>
     <!-- CURTAINS -->
-    <!-- <div class="curtain curtain-1"></div>
-    <div class="curtain curtain-2"></div> -->
+    <div class="curtain curtain-1"></div>
+    <div class="curtain curtain-2"></div>
 
     <!-- EVENT INFO -->
     <div class="event-wrapper">
-      <div class="logo">Logo</div>
+      <div class="logo">
+        <img src="college-logo.png" alt="" />
+      </div>
       <div class="college-info">
         <h1 class="college-name">Vaish College Of Engineering</h1>
         <p class="department">Department of CSE</p>
       </div>
-      <span class="welcome-msg">Welcomes You</span>
+      <span class="welcome-msg">Welcomes You!</span>
       <div class="event-info">
         <!-- <h2 class="event-name">Techathon-23</h2> -->
         <div class="waviy">
@@ -43,26 +45,28 @@
           To give the permission to start the event, please click the button
           below 👇
         </p>
-        <a href="thanks.html" class="start-btn">Start the Event 😃</a>
+        <a href="thanks.html" class="start-btn"
+          ><span class="text">Start the Event 😃</span></a
+        >
       </div>
     </div>
   </body>
 
   <script>
-    // const handleCurtain = () => {
-    //   curtain1.classList.add("move-left");
-    //   curtain2.classList.add("move-right");
-    //   setTimeout(function () {
-    //     curtain1.classList.add("none");
-    //     curtain2.classList.add("none");
-    //   }, 2000);
-    // };
+    const handleCurtain = () => {
+      curtain1.classList.add("move-left");
+      curtain2.classList.add("move-right");
+      setTimeout(function () {
+        curtain1.classList.add("none");
+        curtain2.classList.add("none");
+      }, 2000);
+    };
 
-    // const curtains = document.querySelectorAll(".curtain");
-    // const curtain1 = document.querySelector(".curtain-1");
-    // const curtain2 = document.querySelector(".curtain-2");
-    // curtains.forEach((curtain) => {
-    //   curtain.addEventListener("click", handleCurtain);
-    // });
+    const curtains = document.querySelectorAll(".curtain");
+    const curtain1 = document.querySelector(".curtain-1");
+    const curtain2 = document.querySelector(".curtain-2");
+    curtains.forEach((curtain) => {
+      curtain.addEventListener("click", handleCurtain);
+    });
   </script>
 </html>
