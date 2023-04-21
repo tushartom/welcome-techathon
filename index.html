@@ -13,60 +13,101 @@
     <div class="curtain curtain-2"></div>
 
     <!-- EVENT INFO -->
-    <div class="event-wrapper">
-      <div class="logo">
-        <img src="college-logo.png" alt="" />
-      </div>
-      <div class="college-info">
-        <h1 class="college-name">Vaish College Of Engineering</h1>
-        <p class="department">Department of CSE</p>
-      </div>
-      <span class="welcome-msg">Welcomes You!</span>
-      <div class="event-info">
-        <!-- <h2 class="event-name">Techathon-23</h2> -->
-        <div class="waviy">
-          <span style="--i: 1">T</span>
-          <span style="--i: 2">E</span>
-          <span style="--i: 3">C</span>
-          <span style="--i: 4">H</span>
-          <span style="--i: 5">A</span>
-          <span style="--i: 6">T</span>
-          <span style="--i: 7">H</span>
-          <span style="--i: 8">O</span>
-          <span style="--i: 8">N</span>
-          <span style="--i: 8">-</span>
-          <span style="--i: 8">2</span>
-          <span style="--i: 8">3</span>
+    <div class="maincontainer">
+      <div class="thecard">
+        <div class="thefront">
+          <div class="event-wrapper">
+            <div class="logo">
+              <img src="college-logo.png" alt="" />
+            </div>
+            <div class="college-info">
+              <h1 class="college-name">Vaish College Of Engineering</h1>
+              <p class="department">Department of CSE</p>
+            </div>
+            <span class="welcome-msg">Welcomes You!</span>
+            <div class="event-info">
+              <!-- <h2 class="event-name">Techathon-23</h2> -->
+              <div class="waviy">
+                <span style="--i: 1">T</span>
+                <span style="--i: 2">E</span>
+                <span style="--i: 3">C</span>
+                <span style="--i: 4">H</span>
+                <span style="--i: 5">A</span>
+                <span style="--i: 6">T</span>
+                <span style="--i: 7">H</span>
+                <span style="--i: 8">O</span>
+                <span style="--i: 8">N</span>
+                <span style="--i: 8">-</span>
+                <span style="--i: 8">2</span>
+                <span style="--i: 8">3</span>
+              </div>
+              <p class="tagline">
+                Empowering Innovation - Unleash Your Creativity
+              </p>
+            </div>
+            <div class="btn-info">
+              <p class="btn-action">
+                To give the permission to start the event, please click the
+                button below 👇
+              </p>
+              <a href="thanks.html" class="start-btn"
+                ><span class="text">Start the Event 😃</span></a
+              >
+            </div>
+          </div>
         </div>
-        <p class="tagline">Empowering Innovation - Unleash Your Creativity</p>
-      </div>
-      <div class="btn-info">
-        <p class="btn-action">
-          To give the permission to start the event, please click the button
-          below 👇
-        </p>
-        <a href="thanks.html" class="start-btn"
-          ><span class="text">Start the Event 😃</span></a
-        >
+
+        <div class="theback">
+          <div class="logo">
+            <img src="college-logo.png" alt="" />
+          </div>
+          <div class="college-info">
+            <h1 class="college-name">Vaish College Of Engineering</h1>
+            <p class="department">Department of CSE</p>
+          </div>
+          <div class="final-text">
+            <p>Thanks for giving us the permission.</p>
+            <p>Here we begins the journey towards Techathon-23</p>
+          </div>
+        </div>
       </div>
     </div>
+
+    <canvas id="confetti"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+
+    <script>
+      const handleCurtain = () => {
+        curtain1.classList.add("move-left");
+        curtain2.classList.add("move-right");
+        setTimeout(function () {
+          curtain1.classList.add("none");
+          curtain2.classList.add("none");
+        }, 2000);
+      };
+
+      const curtains = document.querySelectorAll(".curtain");
+      const curtain1 = document.querySelector(".curtain-1");
+      const curtain2 = document.querySelector(".curtain-2");
+      curtains.forEach((curtain) => {
+        curtain.addEventListener("click", handleCurtain);
+      });
+      const btn = document.querySelector(".start-btn");
+      const card = document.querySelector(".thecard");
+      const canvas = document.querySelector("#confetti");
+      const jsConfetti = new JSConfetti();
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        card.classList.add("flip");
+        setTimeout(() => {
+          jsConfetti
+            .addConfetti({
+              emojis: ["🥳", "⚡️", "💥", "✨", "💫", "🌸"],
+            })
+            .then(() => jsConfetti.addConfetti());
+        }, 500);
+      });
+    </script>
   </body>
-
-  <script>
-    const handleCurtain = () => {
-      curtain1.classList.add("move-left");
-      curtain2.classList.add("move-right");
-      setTimeout(function () {
-        curtain1.classList.add("none");
-        curtain2.classList.add("none");
-      }, 2000);
-    };
-
-    const curtains = document.querySelectorAll(".curtain");
-    const curtain1 = document.querySelector(".curtain-1");
-    const curtain2 = document.querySelector(".curtain-2");
-    curtains.forEach((curtain) => {
-      curtain.addEventListener("click", handleCurtain);
-    });
-  </script>
 </html>
